@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +16,7 @@
             align-items: center;
             height: 100vh;
             background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            position: relative;
         }
         video {
             width: 100vw;
@@ -23,20 +25,29 @@
             border-radius: 20px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
+        .ad-button {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 15px 30px;
+            background-color: red;
+            color: white;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
     </style>
 </head>
-    <script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js')
-      .then(registration => {
-        console.log('Service Worker registered with scope:', registration.scope);
-      })
-      .catch(error => {
-        console.log('Service Worker registration failed:', error);
-      });
-  }
-    </script>
 <body>
     <video src="gift.mp4" autoplay loop muted></video>
+    <button class="ad-button" onclick="openAd()">Click Here</button>
+
+    <script>
+        function openAd() {
+            window.open("https://povaique.top/4/9150870", "_blank"); // Replace with your Monetag direct link
+        }
+    </script>
 </body>
 </html>
